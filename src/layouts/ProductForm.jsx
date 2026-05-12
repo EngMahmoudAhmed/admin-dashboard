@@ -1,7 +1,12 @@
 import { useForm } from "react-hook-form";
+import { useEffect } from "react";
 
 const ProductForm = ({ onSubmit, defaultValues = {}, isEdit }) => {
     const { handleSubmit, register, reset, formState: { errors } } = useForm({ defaultValues });
+
+    useEffect(() => {
+        reset(defaultValues);
+    }, [defaultValues, reset]);
 
     const submitHandler = (data) => {
         onSubmit(data);
@@ -9,8 +14,8 @@ const ProductForm = ({ onSubmit, defaultValues = {}, isEdit }) => {
     };
 
     return (
-        <div className="bg-whit shadow-lg rounded-2xl p-6 max-w-xl mx-auto border">
-            <h2 className="text-xl font-semibold mb-6">
+        <div className="bg-white dark:bg-slate-900 shadow-lg rounded-2xl p-6 max-w-xl mx-auto border border-slate-200 dark:border-slate-800">
+            <h2 className="text-xl font-semibold mb-6 text-slate-900 dark:text-white">
                 {isEdit ? "Update Product" : "Add New Product"}
             </h2>
 
@@ -20,89 +25,89 @@ const ProductForm = ({ onSubmit, defaultValues = {}, isEdit }) => {
             >
                 {/* Title */}
                 <div>
-                    <label className="block text-sm font-medium mb-1">
+                    <label className="block text-sm font-medium mb-1 text-slate-700 dark:text-slate-300">
                         Product Title
                     </label>
                     <input
                         type="text"
                         {...register("title", { required: "title is required" })}
                         placeholder="Enter product title"
-                        className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-500"
+                        className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-500 bg-white dark:bg-slate-800 text-slate-900 dark:text-white"
                     />
-                    <p className="text-red-500 text-sm mt-1">
+                    <p className="text-red-500 dark:text-red-400 text-sm mt-1">
                         {errors.title?.message}
                     </p>
                 </div>
 
                 {/* Category */}
                 <div>
-                    <label className="block text-sm font-medium mb-1">
+                    <label className="block text-sm font-medium mb-1 text-slate-700 dark:text-slate-300">
                         Product Category
                     </label>
                     <input
                         type="text"
                         {...register("category", { required: "Product Category is required" })}
                         placeholder="Enter product category"
-                        className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-500"
+                        className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-500 bg-white dark:bg-slate-800 text-slate-900 dark:text-white"
                     />
-                    <p className="text-red-500 text-sm mt-1">
+                    <p className="text-red-500 dark:text-red-400 text-sm mt-1">
                         {errors.category?.message}
                     </p>
                 </div>
 
                 {/* Price */}
                 <div>
-                    <label className="block text-sm font-medium mb-1">
+                    <label className="block text-sm font-medium mb-1 text-slate-700 dark:text-slate-300">
                         Product Price
                     </label>
                     <input
                         type="number"
                         {...register("price", { required: "Price is required" })}
                         placeholder="Enter price"
-                        className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-500"
+                        className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-500 bg-white dark:bg-slate-800 text-slate-900 dark:text-white"
                     />
-                    <p className="text-red-500 text-sm mt-1">
+                    <p className="text-red-500 dark:text-red-400 text-sm mt-1">
                         {errors.price?.message}
                     </p>
                 </div>
 
                 {/* Description */}
                 <div>
-                    <label className="block text-sm font-medium mb-1">
+                    <label className="block text-sm font-medium mb-1 text-slate-700 dark:text-slate-300">
                         Product Description
                     </label>
                     <input
                         type="text"
                         {...register("description", { required: "description is required" })}
                         placeholder="Enter description"
-                        className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-500"
+                        className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-500 bg-white dark:bg-slate-800 text-slate-900 dark:text-white"
                     />
-                    <p className="text-red-500 text-sm mt-1">
+                    <p className="text-red-500 dark:text-red-400 text-sm mt-1">
                         {errors.description?.message}
                     </p>
                 </div>
 
                 {/* Image */}
                 <div>
-                    <label className="block text-sm font-medium mb-1">
+                    <label className="block text-sm font-medium mb-1 text-slate-700 dark:text-slate-300">
                         Image URL
                     </label>
                     <input
                         {...register("image")}
                         placeholder="https://example.com/image.jpg"
-                        className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-500"
+                        className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-500 bg-white dark:bg-slate-800 text-slate-900 dark:text-white"
                     />
                 </div>
 
                 {/* rating */}
                 <div>
-                    <label className="block text-sm font-medium mb-1">
+                    <label className="block text-sm font-medium mb-1 text-slate-700 dark:text-slate-300">
                         rating
                     </label>
                     <input
                         {...register("rating")}
                         placeholder="3/5"
-                        className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-500"
+                        className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-500 bg-white dark:bg-slate-800 text-slate-900 dark:text-white"
                     />
                 </div>
 
@@ -113,7 +118,7 @@ const ProductForm = ({ onSubmit, defaultValues = {}, isEdit }) => {
                         {...register("is_published")}
                         className="w-4 h-4 accent-rose-600 cursor-pointer"
                     />
-                    <label className="text-sm">
+                    <label className="text-sm text-slate-700 dark:text-slate-300">
                         Published
                     </label>
                 </div>
@@ -121,7 +126,7 @@ const ProductForm = ({ onSubmit, defaultValues = {}, isEdit }) => {
                 {/* Button */}
                 <button
                     type="submit"
-                    className="w-full py-2 cursor-pointer rounded-lg bg-rose-600 text-white font-medium hover:bg-rose-700 transition duration-200"
+                    className="w-full py-2 cursor-pointer rounded-lg bg-rose-600 dark:bg-rose-700 text-white font-medium hover:bg-rose-700 dark:hover:bg-rose-800 transition duration-200"
                 >
                     {isEdit ? "Update Product" : "Add Product"}
                 </button>

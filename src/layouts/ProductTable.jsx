@@ -21,34 +21,34 @@ const ProductTable = ({ products, onDelete, onEdit }) => {
                                     initial={{ opacity: 0, scale: 0.9 }}
                                     animate={{ opacity: 1, scale: 1 }}
                                     transition={{ duration: 1, delay: 0.3 }}
-                                    className=" hover:shadow-gray-700 rounded-2xl shadow-xl transition overflow-hidden">
+                                    className="hover:shadow-gray-700 dark:hover:shadow-gray-900 rounded-2xl shadow-xl dark:shadow-lg dark:bg-slate-900 transition overflow-hidden">
                                     <img
                                         src={product.image}
                                         alt={product.title}
                                         className="h-48 w-full object-cover"
                                     />
 
-                                    <div className="p-4 m">
-                                        <span className="text-xs text-blue-600 font-medium uppercase">
+                                    <div className="p-4 m bg-white dark:bg-slate-900">
+                                        <span className="text-xs text-blue-600 dark:text-blue-400 font-medium uppercase">
                                             {product.category}
                                         </span>
 
-                                        <h2 className="font-semibold text-lg mt-1 truncate">{product.title}</h2>
+                                        <h2 className="font-semibold text-lg mt-1 truncate text-slate-900 dark:text-white">{product.title}</h2>
 
-                                        <p className="text-sm text-gray-500 mt-2 line-clamp-2">
+                                        <p className="text-sm text-gray-500 dark:text-gray-400 mt-2 line-clamp-2">
                                             {product.description}
                                         </p>
 
                                         <div className="flex justify-between items-center mt-4">
-                                            <span className="font-bold">${product.price}</span>
-                                            <span className="text-sm">⭐ {product.rating}</span>
+                                            <span className="font-bold text-slate-900 dark:text-white">${product.price}</span>
+                                            <span className="text-sm text-slate-600 dark:text-slate-400">⭐ {product.rating}</span>
                                         </div>
                                         <div className="flex items-center justify-between py-8">
                                             <button onClick={() => onEdit(product)}
-                                                className="px-4 m-auto py-2 cursor-pointer bg-gray-900 text-white rounded-lg text-sm hover:bg-gray-900 transition"
+                                                className="px-4 m-auto py-2 cursor-pointer bg-gray-900 dark:bg-slate-700 text-white rounded-lg text-sm hover:bg-gray-950 dark:hover:bg-slate-600 transition"
                                             >Edit</button>
                                             <button onClick={() => onDelete(product.id)}
-                                                className="px-4 m-auto py-2 cursor-pointer bg-rose-600 text-white rounded-lg text-sm hover:bg-rose-900 transition"
+                                                className="px-4 m-auto py-2 cursor-pointer bg-rose-600 dark:bg-rose-700 text-white rounded-lg text-sm hover:bg-rose-700 dark:hover:bg-rose-800 transition"
                                             >Delete</button>
                                         </div>
                                     </div>

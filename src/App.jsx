@@ -1,14 +1,14 @@
 import DashboardLayout from "./layouts/DashboardLayout";
-import Dashboard from "./pages/Dashboard";
 import Footer from "./pages/Footer";
+import { ThemeProvider } from "./context/ThemeContext";
 
 function App() {
-  return(<>
-  <DashboardLayout />;
-  <Dashboard />
-  <Footer />
-  
-  </>)
+  return (
+    <ThemeProvider>
+      <DashboardLayout />
+      <Footer />
+    </ThemeProvider>
+  );
 }
 
 export default App;
