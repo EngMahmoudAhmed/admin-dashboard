@@ -2,8 +2,6 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/ReactToastify.css";
 import AuthProvider from "../context/auth/AuthContext";
 import ThemeProvider, { useTheme } from "../context/theme/ThemeContext";
-import { CartProvider } from "../context/cart/CartContext";
-import { PaymentProvider } from "../context/payment/PaymentContext";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 
 export const Providers = ({ children }) => {
@@ -14,12 +12,8 @@ export const Providers = ({ children }) => {
         <ThemeProvider>
             <AuthProvider>
                 <QueryClientProvider client={querClient}>
-                    <CartProvider>
-                        <PaymentProvider>
-                            <ToastWithTheme />
-                            {children}
-                        </PaymentProvider>
-                    </CartProvider>
+                    <ToastWithTheme />
+                    {children}
                 </QueryClientProvider>
             </AuthProvider>
         </ThemeProvider>

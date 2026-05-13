@@ -7,12 +7,11 @@ if (!supabaseURL || !supabaseKEY) {
   throw new Error("Supabase env variables are missing");
 }
 
-const supabase = createClient(supabaseURL, supabaseKEY,{
+const supabase = createClient(supabaseURL, supabaseKEY, {
   auth: {
     storage: localStorage,
+    storageKey: "admin-auth",
   },
-  storageKey:
-    "admin-auth",
   database: {
     schema: "public",
   },

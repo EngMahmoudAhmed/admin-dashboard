@@ -14,8 +14,8 @@ const ProductForm = ({ onSubmit, defaultValues = {}, isEdit }) => {
     };
 
     return (
-        <div className="bg-white dark:bg-slate-900 shadow-lg rounded-2xl p-6 max-w-xl mx-auto border border-slate-200 dark:border-slate-800">
-            <h2 className="text-xl font-semibold mb-6 text-slate-900 dark:text-white">
+        <div className="shadow-lg rounded-2xl p-6 max-w-xl mx-auto border border-slate-200 dark:border-slate-800">
+            <h2 className="text-xl font-semibold mb-6">
                 {isEdit ? "Update Product" : "Add New Product"}
             </h2>
 
@@ -25,14 +25,14 @@ const ProductForm = ({ onSubmit, defaultValues = {}, isEdit }) => {
             >
                 {/* Title */}
                 <div>
-                    <label className="block text-sm font-medium mb-1 text-slate-700 dark:text-slate-300">
+                    <label className="block text-sm font-medium mb-1">
                         Product Title
                     </label>
                     <input
                         type="text"
                         {...register("title", { required: "title is required" })}
                         placeholder="Enter product title"
-                        className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-500 bg-white dark:bg-slate-800 text-slate-900 dark:text-white"
+                        className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-500"
                     />
                     <p className="text-red-500 dark:text-red-400 text-sm mt-1">
                         {errors.title?.message}
@@ -41,14 +41,14 @@ const ProductForm = ({ onSubmit, defaultValues = {}, isEdit }) => {
 
                 {/* Category */}
                 <div>
-                    <label className="block text-sm font-medium mb-1 text-slate-700 dark:text-slate-300">
+                    <label className="block text-sm font-medium mb-1">
                         Product Category
                     </label>
                     <input
                         type="text"
                         {...register("category", { required: "Product Category is required" })}
                         placeholder="Enter product category"
-                        className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-500 bg-white dark:bg-slate-800 text-slate-900 dark:text-white"
+                        className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-500"
                     />
                     <p className="text-red-500 dark:text-red-400 text-sm mt-1">
                         {errors.category?.message}
@@ -57,14 +57,14 @@ const ProductForm = ({ onSubmit, defaultValues = {}, isEdit }) => {
 
                 {/* Price */}
                 <div>
-                    <label className="block text-sm font-medium mb-1 text-slate-700 dark:text-slate-300">
+                    <label className="block text-sm font-medium mb-1">
                         Product Price
                     </label>
                     <input
                         type="number"
                         {...register("price", { required: "Price is required" })}
                         placeholder="Enter price"
-                        className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-500 bg-white dark:bg-slate-800 text-slate-900 dark:text-white"
+                        className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-500"
                     />
                     <p className="text-red-500 dark:text-red-400 text-sm mt-1">
                         {errors.price?.message}
@@ -73,14 +73,14 @@ const ProductForm = ({ onSubmit, defaultValues = {}, isEdit }) => {
 
                 {/* Description */}
                 <div>
-                    <label className="block text-sm font-medium mb-1 text-slate-700 dark:text-slate-300">
+                    <label className="block text-sm font-medium mb-1">
                         Product Description
                     </label>
                     <input
                         type="text"
                         {...register("description", { required: "description is required" })}
                         placeholder="Enter description"
-                        className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-500 bg-white dark:bg-slate-800 text-slate-900 dark:text-white"
+                        className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-500"
                     />
                     <p className="text-red-500 dark:text-red-400 text-sm mt-1">
                         {errors.description?.message}
@@ -89,25 +89,25 @@ const ProductForm = ({ onSubmit, defaultValues = {}, isEdit }) => {
 
                 {/* Image */}
                 <div>
-                    <label className="block text-sm font-medium mb-1 text-slate-700 dark:text-slate-300">
+                    <label className="block text-sm font-medium mb-1">
                         Image URL
                     </label>
                     <input
                         {...register("image")}
                         placeholder="https://example.com/image.jpg"
-                        className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-500 bg-white dark:bg-slate-800 text-slate-900 dark:text-white"
+                        className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-500"
                     />
                 </div>
 
                 {/* rating */}
                 <div>
-                    <label className="block text-sm font-medium mb-1 text-slate-700 dark:text-slate-300">
+                    <label className="block text-sm font-medium mb-1">
                         rating
                     </label>
                     <input
                         {...register("rating")}
                         placeholder="3/5"
-                        className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-500 bg-white dark:bg-slate-800 text-slate-900 dark:text-white"
+                        className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-500 "
                     />
                 </div>
 
@@ -118,7 +118,7 @@ const ProductForm = ({ onSubmit, defaultValues = {}, isEdit }) => {
                         {...register("is_published")}
                         className="w-4 h-4 accent-rose-600 cursor-pointer"
                     />
-                    <label className="text-sm text-slate-700 dark:text-slate-300">
+                    <label className="text-sm ">
                         Published
                     </label>
                 </div>

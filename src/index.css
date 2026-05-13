@@ -1,1 +1,22 @@
+.light {
+  --bg: #ffffff;
+  --text: #000000;
+  --hover: #000;
+}
+.dark {
+  --bg: #0b1220;
+  --text: #e6eef8;
+  --hover: #e6eef8;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  transition:
+    background-color, 150ms, linear,
+    color 150ms linear;
+    
+}
+
+
 @import "tailwindcss"

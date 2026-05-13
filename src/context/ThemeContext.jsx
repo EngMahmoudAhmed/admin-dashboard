@@ -2,7 +2,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 
 const ThemeContext = createContext();
 
-export const ThemeProvider = ({ children }) => {
+ const ThemeProvider = ({ children }) => {
     const [theme, setTheme] = useState(() => {
         const savedTheme = localStorage.getItem("theme");
         if (savedTheme) {
@@ -34,10 +34,15 @@ export const ThemeProvider = ({ children }) => {
     );
 };
 
-export const useTheme = () => {
-    const context = useContext(ThemeContext);
-    if (!context) {
-        throw new Error("useTheme must be used within ThemeProvider");
-    }
-    return context;
-};
+export const useTheme = () => useContext(ThemeContext);
+
+
+// export const useTheme = () => {
+//     const context = useContext(ThemeContext);
+//     if (!context) {
+//         throw new Error("useTheme must be used within ThemeProvider");
+//     }
+//     return context;
+// };
+
+export default ThemeProvider;
