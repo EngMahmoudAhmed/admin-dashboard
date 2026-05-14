@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 // import ProductForm from "../component/layouts/ProductForm";
 // import ProductTable from "../component/layouts/ProductTable";
 import { useAdminProducts } from "../hooks/useAdminProducts";
@@ -11,7 +11,7 @@ import ProductTable from "../layouts/ProductTable";
 // import ProductSkeleton from "./ProductSkeleton";
 
 const Dashboard = () => {
-    const { data: products, isLoading, isError, error } = useAdminProducts();
+    const { data: products } = useAdminProducts();
     const deleteMutation = useDeleteProduct();
     const updateMutation = useUpdateProduct();
     const addMutation = useAddProduct();
@@ -41,17 +41,17 @@ const Dashboard = () => {
             </h1>
 
 
-            <ProductForm
+            {/* <ProductForm
                 onSubmit={editingProduct ? handleUpdate : handleAdd}
                 defaultValues={editingProduct || {}}
                 isEdit={!!editingProduct}
-            />
+            /> */}
 
-            <ProductTable
+            {/* <ProductTable
                 products={products}
                 onEdit={setEditingProduct}
                 onDelete={handleDelete}
-            />
+            /> */}
         </>
     )
 

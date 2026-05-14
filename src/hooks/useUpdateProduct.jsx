@@ -1,5 +1,5 @@
 import { useQueryClient, useMutation } from "@tanstack/react-query";
-import { updateProduct } from "../api/Productsapi";
+import { updateProduct } from "../api/ProductsApi";
 
 export const useUpdateProduct = () => {
     const queryClient = useQueryClient();
@@ -10,10 +10,4 @@ export const useUpdateProduct = () => {
             queryClient.invalidateQueries({ queryKey: ['products'] });
         },
     });
-    // {
-    //     console.log("sending", {
-    //         id: product.id,
-    //         formData
-    //     });
-    // }
 };

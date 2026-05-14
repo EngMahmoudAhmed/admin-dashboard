@@ -9,7 +9,8 @@ const ProductTable = ({ products, onDelete, onEdit }) => {
     const { isLoading } = useAdminProducts()
     return (
         <>
-            <div className="grid max-w-7xl mx-auto grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 px-6 py-16">
+            {/* <div className="grid max-w-7xl mx-auto grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 px-6 py-16"> */}
+            <div className="grid max-w-7xl w-full  mx-auto grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 px-6 py-16">
                 {
                     isLoading
                         ? Array.from({ length: 10 }).map((_, i) => (
