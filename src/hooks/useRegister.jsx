@@ -4,7 +4,7 @@ import supabase from "../lib/supabase";
 export const useRegister = () => {
   return useMutation({
     mutationFn: async ({ email, password, name }) => {
-      const { error } = await supabase.auth.signUp({
+      const { data, error } = await supabase.auth.signUp({
         email,
         password,
         options: {
@@ -13,6 +13,7 @@ export const useRegister = () => {
         },
       });
       if (error) throw error;
+      return data;
     },
   });
 };
